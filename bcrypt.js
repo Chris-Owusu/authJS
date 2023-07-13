@@ -11,3 +11,14 @@ const passwordHash = async (password, saltRounds) => {
   }
   return null;
 }
+
+
+// Compare the password when trying to retrieve
+const comparePass = async (password, hash) => {
+    try {
+        const pass = await bcrypt.compare(password, hash);
+    } catch (error) {
+        console.log(error);
+    }
+    return false;
+}
