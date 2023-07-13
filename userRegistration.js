@@ -95,6 +95,12 @@ app.post("/register", async (req, res) => {
   }
 });
 
+//Logout Route
+app.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/login');
+})
+
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
